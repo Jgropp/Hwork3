@@ -21,16 +21,16 @@ def main():
     }
 
   api = get_api(cfg)
-  #tweet = '/mnt/sda1/moneyplant.png'
-  #status = api.update_with_media(image_path, tweet)
-  # Yes, tweet is called 'status' rather confusing
+ 
   tweet = "#UMSI-206 #Proj3"
-  status = api.update_with_media("smiley-face.jpg", tweet)
+  status = api.update_with_media("smiley-face.jpg", tweet) #Tweets out picture from python
 
 if __name__ == "__main__":
   main()
 
 print("""No output necessary although you 
 	can print out a success/failure message if you want to.""")
+
+#References: http://nodotcom.org/python-twitter-tutorial.html
 
 

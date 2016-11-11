@@ -37,7 +37,7 @@ def spaced(word):
 		return word
 	else:
 		return " " + word
-print("".join([spaced(x) for x in txt]))
+print("".join([spaced(x) for x in txt])) #Joins all the words together so it doesn't come separated in a list
 final_words = []
 
 
@@ -52,3 +52,5 @@ for (word, tag) in tagged_tokens:
 print ("".join(final_words))
 
 print("\n\nEND*******")
+
+#References: https://github.com/cvanlent/SI206/blob/master/madlib_generatorP3.py

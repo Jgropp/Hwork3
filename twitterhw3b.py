@@ -19,12 +19,16 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-search_term = input("Enter a term to search on twitter: ")
+search_term = input("Enter a term to search on twitter: ") #Input for user to search
 for tweet in tweepy.Cursor(api.search, q = search_term, result_type ='recent', include_entities = True,lang = 'en').items(100):
 	print (tweet.text)
 
 txt = TextBlob(tweet.text)
 subj = txt.sentiment.subjectivity
 pol = txt.sentiment.polarity
-print("Average subjectivity is", subj)
-print("Average polarity is", pol)
+print("Average subjectivity is", subj) #Prints the subjectivity
+print("Average polarity is", pol) #Prints the polarity
+
+#Refernces:
+#http://stackoverflow.com/questions/22469713/managing-tweepy-api-search
+#https://github.com/tweepy/tweepy/issues/197

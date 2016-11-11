@@ -38,3 +38,7 @@ my_string = str(soup)
 txtfile = open("HW3_BSI_Page.html", "w") #Saves it to a html file
 txtfile.write(str(soup))
 txtfile.close()
+
+#References: http://stackoverflow.com/questions/1579133/replace-src-of-all-img-elements-using-parser
+             #https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+             #https://docs.python.org/2/library/re.html#re.compile

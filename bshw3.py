@@ -14,11 +14,27 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import requests
+import webbrowser
+import re
 
-base_url = 'https://www.si.umich.edu/programs/bachelor-science-information/bsi-admissions'
-r = requests.get(base_url)
-soup = BeautifulSoup(r.text,'lxml')
+base_url = "http://collemc.people.si.umich.edu/data/bshw3StarterFile.html"
+r = requests.get(base_url) 
+soup = BeautifulSoup(r.text, "html.parser")
 
-print ('Jgroppss')
+for words in soup.find_all(text = re.compile("student")):
+	letter = str(words)
+	letter = letter.replace("student", "AMAZING student")
+	words.replaceWith(letter)
 
-"g"
+for img in soup.find_all('img'):
+	if img['src'] == "https://testbed.files.wordpress.com/2012/09/bsi_exposition_041316_192.jpg":
+		img['src'] = "Jonny.jpg"
+	else:
+		img['src'] = "Media/logo.png"
+
+my_string = str(soup)
+
+
+txtfile = open("HW3_BSI_Page.html", "w")
+txtfile.write(str(soup))
+txtfile.close()
